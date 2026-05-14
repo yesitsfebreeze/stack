@@ -81,7 +81,27 @@ See [docs/OPT-IN.md](docs/OPT-IN.md).
 
 ## Update
 
-Pull marketplace + reinstall plugins:
+One-shot via the bundled command:
+
+```
+/stack:update
+```
+
+Runs `scripts/update.sh` (POSIX) or `scripts/update.ps1` (Windows) — refreshes the `stack` marketplace and `claude plugin update`s each sub-plugin (`stack`, `git-fs`, `vicky`, `context7`, `caveman`, `context-mode`). Idempotent. **Restart Claude Code** to apply, then `/stack:doctor` to verify.
+
+Direct invocation (without Claude Code):
+
+```bash
+# POSIX
+bash scripts/update.sh
+
+# Windows
+powershell -ExecutionPolicy Bypass -File scripts/update.ps1
+# or
+scripts\update.bat
+```
+
+Manual fallback (per-plugin):
 
 ```
 /plugin marketplace update stack
@@ -89,15 +109,9 @@ Pull marketplace + reinstall plugins:
 /plugin update git-fs@stack
 /plugin update vicky@stack
 /plugin update context7@stack
+/plugin update caveman@stack
+/plugin update context-mode@stack
 ```
-
-Or one-shot from terminal:
-
-```bash
-claude plugin update --all
-```
-
-External plugins (`caveman`, `context-mode`) update from their upstream repos automatically via marketplace refresh.
 
 ## Uninstall
 
