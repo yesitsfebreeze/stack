@@ -13,7 +13,7 @@
       "name": "stack",
       "source": "./plugins/stack",
       "description": "Entry point. Bundles routing, setup, maintenance docs as skills. Install first.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "category": "workflow",
       "keywords": ["stack", "hub", "routing", "setup"]
     },
@@ -23,9 +23,9 @@
         "source": "github",
         "repo": "yesitsfebreeze/git-fs"
       },
-      "description": "Per-session virtual filesystem with branch isolation. Auto-downloads binary, auto-inits projects.",
+      "description": "Virtual filesystem over a bare git object store. Each session works on agent/<id> branch; every edit is a commit; Stop hook merges to main and materializes to disk.",
       "category": "filesystem",
-      "keywords": ["git", "fs", "branch", "isolation"]
+      "keywords": ["git", "filesystem", "mcp", "multi-agent", "branching", "merge"]
     },
     {
       "name": "vicky",
@@ -33,9 +33,9 @@
         "source": "github",
         "repo": "yesitsfebreeze/vicky"
       },
-      "description": "Demand-driven research KB. Auto-enrich on gap. Drives Obsidian + Dataview.",
+      "description": "Demand-driven knowledge base. Auto-enriches answers when gaps detected. Drives Obsidian + Dataview for live KB views.",
       "category": "research",
-      "keywords": ["research", "kb", "web-search"]
+      "keywords": ["knowledge-base", "research", "dataview", "obsidian", "demand-driven", "gap-detection"]
     },
     {
       "name": "context7",
@@ -48,10 +48,10 @@
     {
       "name": "pdf-reader",
       "source": "./plugins/pdf-reader",
-      "description": "PDF text + image + metadata extraction via @sylphx/pdf-reader-mcp.",
+      "description": "MCP server providing tools to read PDF files (text, images, metadata, page ranges, batch). Wraps @sylphx/pdf-reader-mcp.",
       "version": "0.1.0",
       "category": "docs",
-      "keywords": ["pdf", "extract", "documents"]
+      "keywords": ["pdf", "extract", "documents", "ocr"]
     },
     {
       "name": "caveman",
@@ -59,8 +59,9 @@
         "source": "github",
         "repo": "JuliusBrussee/caveman"
       },
-      "description": "Ultra-compressed communication mode. ~75% token cut.",
-      "category": "communication"
+      "description": "Ultra-compressed communication mode. Cuts ~75% of tokens while keeping full technical accuracy by speaking like a caveman.",
+      "category": "communication",
+      "keywords": ["tokens", "compression", "communication"]
     },
     {
       "name": "context-mode",
@@ -68,8 +69,9 @@
         "source": "github",
         "repo": "mksglu/context-mode"
       },
-      "description": "Sandbox raw tool output, FTS search over commands. Keeps context lean.",
-      "category": "context"
+      "description": "MCP server that saves 98% of your context window with session continuity. Sandboxed code execution in 11 languages, FTS5 knowledge base with BM25 ranking, automatic state restore across compactions.",
+      "category": "context",
+      "keywords": ["context-window", "sandbox", "code-execution", "fts5", "bm25"]
     }
   ]
 }
