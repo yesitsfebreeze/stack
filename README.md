@@ -12,6 +12,7 @@ Bundles the MCP servers and skills that route work cheaply:
 | `git-fs` | Per-session virtual filesystem. Branch isolation, auto-merge on stop. |
 | `vicky` | Persistent research KB. Survives sessions, links findings. |
 | `context7` | Versioned library/SDK/framework docs over HTTP. |
+| `pdf-reader` | PDF text + image + metadata extraction via `@sylphx/pdf-reader-mcp`. |
 | `caveman` | (external) Ultra-compressed communication mode. |
 | `context-mode` | (external) Sandbox raw tool output, FTS5 search. |
 
@@ -37,9 +38,10 @@ Without the marker the hooks are silent. Zero cost.
 `/stack:bootstrap` runs `scripts/install.sh` (POSIX) or `scripts/install.ps1` (Windows) via Bash. The script:
 
 - Adds the `stack` marketplace.
-- Installs all sub-plugins: `git-fs`, `vicky`, `context7`, `caveman`, `context-mode`.
+- Installs all sub-plugins: `git-fs`, `vicky`, `context7`, `pdf-reader`, `caveman`, `context-mode`.
 - Creates `.stack` marker in cwd (activates routing hooks).
 - Warns if `CONTEXT7_API_KEY` is unset.
+- Warns if `npx` is not on PATH (required for `pdf-reader`).
 
 Idempotent — safe to re-run.
 
@@ -70,6 +72,7 @@ Reports MCP health, env vars, opt-in marker, installed plugins.
 | `git-fs` | None — plugin auto-downloads binary on first run. |
 | `vicky` | None — upstream `yesitsfebreeze/vicky` plugin. |
 | `context7` | `CONTEXT7_API_KEY` env var ([get key](https://context7.com)) |
+| `pdf-reader` | Node.js ≥18 (`npx` on PATH). First run downloads `@sylphx/pdf-reader-mcp` from npm. |
 
 ### Activate per project
 
@@ -87,7 +90,7 @@ One-shot via the bundled command:
 /stack:update
 ```
 
-Runs `scripts/update.sh` (POSIX) or `scripts/update.ps1` (Windows) — refreshes the `stack` marketplace and `claude plugin update`s each sub-plugin (`stack`, `git-fs`, `vicky`, `context7`, `caveman`, `context-mode`). Idempotent. **Restart Claude Code** to apply, then `/stack:doctor` to verify.
+Runs `scripts/update.sh` (POSIX) or `scripts/update.ps1` (Windows) — refreshes the `stack` marketplace and `claude plugin update`s each sub-plugin (`stack`, `git-fs`, `vicky`, `context7`, `pdf-reader`, `caveman`, `context-mode`). Idempotent. **Restart Claude Code** to apply, then `/stack:doctor` to verify.
 
 Direct invocation (without Claude Code):
 
@@ -109,6 +112,7 @@ Manual fallback (per-plugin):
 /plugin update git-fs@stack
 /plugin update vicky@stack
 /plugin update context7@stack
+/plugin update pdf-reader@stack
 /plugin update caveman@stack
 /plugin update context-mode@stack
 ```
@@ -131,5 +135,5 @@ Removes hooks, skills, MCP registrations. Vendored vicky source and `.stack` mar
 | [docs/MAINTENANCE.md](docs/MAINTENANCE.md) | Monthly audit / prune |
 | [docs/OPT-IN.md](docs/OPT-IN.md) | `.stack` marker mechanics |
 | [docs/tools/](docs/tools/) | Per-tool reference (git-fs, vicky, context7, skills) |
-| [docs/install/](docs/install/) | Legacy manual install docs |
+| [docs/install/](docs/install/) | Per-tool install docs (git-fs, vicky, context7, pdf-reader, skills) |
 | [docs/reference/WORKFLOWS.md](docs/reference/WORKFLOWS.md) | Comparison vs 2026 ecosystem |

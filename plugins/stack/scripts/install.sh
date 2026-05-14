@@ -5,7 +5,7 @@
 set -euo pipefail
 
 MARKETPLACE="yesitsfebreeze/stack"
-PLUGINS=(stack git-fs vicky context7 caveman context-mode)
+PLUGINS=(stack git-fs vicky context7 pdf-reader caveman context-mode)
 
 echo "==> Stack bootstrap"
 
@@ -35,6 +35,12 @@ if [ -z "${CONTEXT7_API_KEY:-}" ]; then
   echo "WARN: CONTEXT7_API_KEY not set. context7 MCP will fail auth."
   echo "      Get key from https://context7.com/dashboard, then:"
   echo "        export CONTEXT7_API_KEY=ctx7sk-..."
+fi
+
+if ! command -v npx >/dev/null 2>&1; then
+  echo ""
+  echo "WARN: 'npx' not on PATH. pdf-reader MCP will fail to launch."
+  echo "      Install Node.js (>=18) from https://nodejs.org."
 fi
 
 echo ""

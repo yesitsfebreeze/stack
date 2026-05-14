@@ -11,6 +11,7 @@ Run `claude mcp list`. Expect entries `connected`:
 - `git-fs`
 - `vicky`
 - `context7`
+- `pdf-reader`
 
 Any missing or `failed`: report which, and suggest `/plugin install <name>@stack`.
 
@@ -22,13 +23,19 @@ Check process env:
 
 Empty: report and suggest export.
 
-## 3. Routing opt-in
+## 3. Binaries on PATH
+
+- `npx` — required for `pdf-reader` (ships with Node.js)
+
+Missing: install Node.js (>=18) from https://nodejs.org.
+
+## 4. Routing opt-in
 
 Check cwd for `.stack` or `.stack.toml` marker. Present → SessionStart hook injects routing summary. Absent → routing is dormant unless user types stack trigger phrase.
 
 Report status only — do not create the file.
 
-## 4. Stack plugins installed
+## 5. Stack plugins installed
 
 Run `/plugin list` (or read user settings). Expect:
 
@@ -36,6 +43,7 @@ Run `/plugin list` (or read user settings). Expect:
 - `git-fs@stack`
 - `vicky@stack`
 - `context7@stack`
+- `pdf-reader@stack`
 
 Optional: `caveman@stack`, `context-mode@stack`.
 
@@ -43,10 +51,11 @@ Optional: `caveman@stack`, `context-mode@stack`.
 
 ```
 Stack doctor:
-  MCPs:        [✅/❌] git-fs, vicky, context7
+  MCPs:        [✅/❌] git-fs, vicky, context7, pdf-reader
   Env:         [✅/❌] CONTEXT7_API_KEY
+  Bin:         [✅/❌] npx
   Opt-in:      [✅/—] .stack marker
-  Plugins:     [✅/❌] stack, git-fs, vicky, context7
+  Plugins:     [✅/❌] stack, git-fs, vicky, context7, pdf-reader
 ```
 
 Then list fixes for each ❌.

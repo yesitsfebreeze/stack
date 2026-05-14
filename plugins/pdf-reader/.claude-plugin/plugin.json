@@ -1,0 +1,8 @@
+{
+  "name": "pdf-reader",
+  "version": "0.1.0",
+  "description": "PDF text + image + metadata extraction via @sylphx/pdf-reader-mcp.",
+  "author": { "name": "yesitsfebreeze" },
+  "homepage": "https://mcpservers.org/servers/sylphxltd/pdf-reader-mcp",
+  "keywords": ["pdf", "extract", "ocr", "documents"]
+}

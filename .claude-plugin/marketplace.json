@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Token-efficient workflow stack for Claude Code. Hub + MCP plugins + bundled skill plugins.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
@@ -44,6 +44,14 @@
       "version": "0.1.0",
       "category": "docs",
       "keywords": ["docs", "library", "sdk"]
+    },
+    {
+      "name": "pdf-reader",
+      "source": "./plugins/pdf-reader",
+      "description": "PDF text + image + metadata extraction via @sylphx/pdf-reader-mcp.",
+      "version": "0.1.0",
+      "category": "docs",
+      "keywords": ["pdf", "extract", "documents"]
     },
     {
       "name": "caveman",

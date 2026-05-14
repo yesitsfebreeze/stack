@@ -7,6 +7,7 @@ Apply silently. Don't narrate unless asked.
 | User signal | Route | Why |
 |---|---|---|
 | Library/SDK name + "how do I…" / API syntax / version migration | **Context7** `resolve-library-id` → `query-docs` | Versioned, current. Training data drifts. |
+| PDF file or URL → extract text/images/metadata | **pdf-reader** `read_pdf` | Native PDF; supports page ranges, batch, HTTP. |
 | Project-internal "where is X" / "what does our code say about Y" | **kern** `search_fulltext`; fallback Grep/Glob | Indexed, no file re-read |
 | "Latest" / "current" / "in 2026" / open research | **vicky** `query` → if gap: `web-search` → `remember` | Persistent across sessions |
 | Code review, refactor, "where is X called" | codegraph (if installed); else kern + Grep | Structural > textual |
@@ -20,6 +21,7 @@ Apply silently. Don't narrate unless asked.
 
 - ❌ `Read` whole file just to analyze → kern search or codegraph
 - ❌ `WebFetch` library docs → Context7
+- ❌ `Read` on `.pdf` → pdf-reader `read_pdf` (Read returns garbage on binary)
 - ❌ Repeat web search across sessions → `vicky.query` first
 - ❌ Dump raw tool output into context → sandbox via context-mode
 - ❌ Skill with vague description → must contain verbatim trigger phrase
@@ -40,6 +42,7 @@ If a routed tool is **not available** in the MCP tool list, or user reports it b
 | git-fs | [install/git-fs.md](install/git-fs.md) |
 | vicky | [install/vicky.md](install/vicky.md) |
 | Context7 | [install/context7.md](install/context7.md) |
+| pdf-reader | [install/pdf-reader.md](install/pdf-reader.md) |
 | Skill not firing | [install/skills.md](install/skills.md) |
 
 Do not invent install commands. If the install doc lacks info, ask the user — don't guess.
@@ -50,11 +53,12 @@ Do not invent install commands. If the install doc lacks info, ask the user — 
 1. kern.search_fulltext              (project docs)
 2. vicky.query                       (research KB)
 3. context7.query-docs               (library docs)
-4. codegraph                         (structural code)
-5. Grep / Glob                       (raw search fallback)
-6. Read                              (only when editing)
-7. WebSearch                         (only after vicky gap signal)
-8. WebFetch                          (only for non-library content not in vicky)
+4. pdf-reader.read_pdf               (PDF files / URLs)
+5. codegraph                         (structural code)
+6. Grep / Glob                       (raw search fallback)
+7. Read                              (only when editing)
+8. WebSearch                         (only after vicky gap signal)
+9. WebFetch                          (only for non-library content not in vicky)
 ```
 
 ## Quick decision flow
@@ -62,6 +66,7 @@ Do not invent install commands. If the install doc lacks info, ask the user — 
 ```
 question arrives
   ├─ about library API?       → Context7
+  ├─ involves a PDF?          → pdf-reader
   ├─ about our project?       → kern
   ├─ "latest" / external?     → vicky → web-search if gap
   ├─ code structure?          → codegraph / kern

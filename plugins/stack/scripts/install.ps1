@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Stop"
 
 $Marketplace = "yesitsfebreeze/stack"
-$Plugins = @("stack", "git-fs", "vicky", "context7", "caveman", "context-mode")
+$Plugins = @("stack", "git-fs", "vicky", "context7", "pdf-reader", "caveman", "context-mode")
 
 Write-Host "==> Stack bootstrap"
 
@@ -35,6 +35,12 @@ if (-not $env:CONTEXT7_API_KEY) {
   Write-Host "      Get key from https://context7.com/dashboard, then:"
   Write-Host "        setx CONTEXT7_API_KEY ctx7sk-...   # persist, new shell"
   Write-Host "        # or session-only: `$env:CONTEXT7_API_KEY = 'ctx7sk-...'"
+}
+
+if (-not (Get-Command npx -ErrorAction SilentlyContinue)) {
+  Write-Host ""
+  Write-Host "WARN: 'npx' not on PATH. pdf-reader MCP will fail to launch."
+  Write-Host "      Install Node.js (>=18) from https://nodejs.org."
 }
 
 Write-Host ""

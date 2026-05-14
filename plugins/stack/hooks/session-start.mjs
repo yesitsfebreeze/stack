@@ -19,12 +19,13 @@ const summary = `# Stack routing active
 Project opted in via \`.stack\` marker. Apply silently:
 
 - Library/SDK question → Context7 (\`resolve-library-id\` → \`query-docs\`)
+- PDF file or URL → pdf-reader (\`read_pdf\`)
 - "Latest" / external research → vicky \`query\`; web-search on gap; \`remember\`
 - Project code search → Grep / Glob (no kern in this stack)
 - Multi-agent / throwaway → git-fs branch (\`git_fs_branch_create\`)
 - Raw tool output > 20 lines → context-mode sandbox
 
-Anti-patterns: Read whole file to analyze; WebFetch library docs; repeat web search across sessions.
+Anti-patterns: Read whole file to analyze; Read on .pdf (use pdf-reader); WebFetch library docs; repeat web search across sessions.
 
 Full table: invoke skill \`stack:routing\`.`;
 

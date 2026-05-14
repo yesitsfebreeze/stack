@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Continue"
 
 $Marketplace = "stack"
-$Plugins = @("stack", "git-fs", "vicky", "context7", "caveman", "context-mode")
+$Plugins = @("stack", "git-fs", "vicky", "context7", "pdf-reader", "caveman", "context-mode")
 
 Write-Host "==> Stack update"
 

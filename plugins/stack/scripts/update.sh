@@ -5,7 +5,7 @@
 set -uo pipefail
 
 MARKETPLACE="stack"
-PLUGINS=(stack git-fs vicky context7 caveman context-mode)
+PLUGINS=(stack git-fs vicky context7 pdf-reader caveman context-mode)
 
 echo "==> Stack update"
 

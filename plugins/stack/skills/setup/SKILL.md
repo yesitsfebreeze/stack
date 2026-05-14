@@ -13,12 +13,14 @@ Check tool list shows:
 - `mcp__git-fs__git_fs_*`
 - `mcp__vicky__*`
 - `mcp__context7__*`
+- `mcp__pdf-reader__*`
 
 Missing? Install the matching plugin from the `stack` marketplace:
 ```
 /plugin install git-fs@stack
 /plugin install vicky@stack
 /plugin install context7@stack
+/plugin install pdf-reader@stack
 ```
 
 ## 2. CLAUDE.md sanity
@@ -51,7 +53,7 @@ Empty? Seed via `vicky.web-search` + `vicky.remember`.
 
 ## Done state
 
-- [ ] All 3 MCP servers reachable
+- [ ] All 4 MCP servers reachable (git-fs, vicky, context7, pdf-reader)
 - [ ] CLAUDE.md ≤200 lines, global-only
 - [ ] Skill count ≤12, descriptions verified
 - [ ] git-fs branch live (if multi-agent)

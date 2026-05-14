@@ -1,5 +1,5 @@
 ---
-description: Refresh the stack marketplace and update every sub-plugin (stack, git-fs, vicky, context7, caveman, context-mode). Restart required to apply.
+description: Refresh the stack marketplace and update every sub-plugin (stack, git-fs, vicky, context7, pdf-reader, caveman, context-mode). Restart required to apply.
 ---
 
 Run the platform-appropriate update script from this plugin via Bash. Idempotent — safe to re-run.
@@ -10,7 +10,7 @@ Run the platform-appropriate update script from this plugin via Bash. Idempotent
 
 2. The script will:
    - `claude plugin marketplace update stack`
-   - `claude plugin update <name>@stack` for each of: `stack`, `git-fs`, `vicky`, `context7`, `caveman`, `context-mode`
+   - `claude plugin update <name>@stack` for each of: `stack`, `git-fs`, `vicky`, `context7`, `pdf-reader`, `caveman`, `context-mode`
    - Continue on individual failures (missing plugin, network blip) instead of aborting
 
 3. Tell user: **restart Claude Code** for new versions to load. Then `/stack:doctor` to verify MCPs reconnect.
