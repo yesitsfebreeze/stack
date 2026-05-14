@@ -1,4 +1,4 @@
-# Stack bootstrap — Windows PowerShell.
+# Stack bootstrap - Windows PowerShell.
 # Idempotent. Safe to re-run.
 
 $ErrorActionPreference = "Stop"
@@ -18,7 +18,7 @@ try { claude plugin marketplace add $Marketplace } catch { Write-Host "  (alread
 
 foreach ($p in $Plugins) {
   Write-Host "==> Install $p@stack"
-  try { claude plugin install "$p@stack" } catch { Write-Host "  (already installed or failed — continuing)" }
+  try { claude plugin install "$p@stack" } catch { Write-Host "  (already installed or failed, continuing)" }
 }
 
 Write-Host "==> Create .stack marker in $(Get-Location)"

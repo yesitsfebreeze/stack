@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Stack bootstrap — POSIX (macOS, Linux, Git Bash on Windows).
+# Stack bootstrap - POSIX (macOS, Linux, Git Bash on Windows).
 # Idempotent. Safe to re-run.
 
 set -euo pipefail
@@ -19,7 +19,7 @@ claude plugin marketplace add "${MARKETPLACE}" || true
 
 for p in "${PLUGINS[@]}"; do
   echo "==> Install ${p}@stack"
-  claude plugin install "${p}@stack" || echo "  (already installed or failed — continuing)"
+  claude plugin install "${p}@stack" || echo "  (already installed or failed, continuing)"
 done
 
 echo "==> Create .stack marker in $(pwd)"

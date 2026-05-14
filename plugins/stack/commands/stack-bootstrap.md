@@ -6,7 +6,7 @@ Run the platform-appropriate bootstrap script from this plugin via Bash. The scr
 
 ## Steps
 
-1. Detect OS. On Windows: run `${CLAUDE_PLUGIN_ROOT}/scripts/install.ps1` via `powershell -ExecutionPolicy Bypass -File`. On macOS/Linux: run `bash ${CLAUDE_PLUGIN_ROOT}/scripts/install.sh`.
+1. Detect OS. On Windows: prefer `pwsh` (PowerShell 7, UTF-8 default) — `pwsh -ExecutionPolicy Bypass -File "${CLAUDE_PLUGIN_ROOT}/scripts/install.ps1"`. Fall back to `powershell` only if `pwsh` is not on PATH (Windows PowerShell 5.1 mangles non-ASCII; scripts are ASCII-only as defense). On macOS/Linux: `bash "${CLAUDE_PLUGIN_ROOT}/scripts/install.sh"`.
 
 2. The script will:
    - `claude plugin marketplace add yesitsfebreeze/stack`
