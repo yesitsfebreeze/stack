@@ -1,0 +1,10 @@
+{
+  "name": "stack",
+  "version": "0.1.0",
+  "description": "Stack entry point. Routing decision table + setup checklist + maintenance audit as auto-loaded skills. Ships SessionStart + PreToolUse routing hooks and /stack-doctor.",
+  "author": {
+    "name": "yesitsfebreeze"
+  },
+  "homepage": "https://github.com/yesitsfebreeze/stack",
+  "keywords": ["stack", "routing", "hub"]
+}

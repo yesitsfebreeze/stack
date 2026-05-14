@@ -1,0 +1,67 @@
+{
+  "name": "stack",
+  "owner": {
+    "name": "yesitsfebreeze",
+    "url": "https://github.com/yesitsfebreeze"
+  },
+  "metadata": {
+    "description": "Token-efficient workflow stack for Claude Code. Hub + MCP plugins + bundled skill plugins.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "stack",
+      "source": "./plugins/stack",
+      "description": "Entry point. Bundles routing, setup, maintenance docs as skills. Install first.",
+      "version": "0.1.0",
+      "category": "workflow",
+      "keywords": ["stack", "hub", "routing", "setup"]
+    },
+    {
+      "name": "git-fs",
+      "source": {
+        "source": "github",
+        "repo": "yesitsfebreeze/git-fs"
+      },
+      "description": "Per-session virtual filesystem with branch isolation. Auto-downloads binary, auto-inits projects.",
+      "category": "filesystem",
+      "keywords": ["git", "fs", "branch", "isolation"]
+    },
+    {
+      "name": "vicky",
+      "source": {
+        "source": "github",
+        "repo": "yesitsfebreeze/vicky"
+      },
+      "description": "Demand-driven research KB. Auto-enrich on gap. Drives Obsidian + Dataview.",
+      "category": "research",
+      "keywords": ["research", "kb", "web-search"]
+    },
+    {
+      "name": "context7",
+      "source": "./plugins/context7",
+      "description": "Library/SDK/framework docs, versioned and current (Context7 MCP).",
+      "version": "0.1.0",
+      "category": "docs",
+      "keywords": ["docs", "library", "sdk"]
+    },
+    {
+      "name": "caveman",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
+      "description": "Ultra-compressed communication mode. ~75% token cut.",
+      "category": "communication"
+    },
+    {
+      "name": "context-mode",
+      "source": {
+        "source": "github",
+        "repo": "mksglu/context-mode"
+      },
+      "description": "Sandbox raw tool output, FTS search over commands. Keeps context lean.",
+      "category": "context"
+    }
+  ]
+}

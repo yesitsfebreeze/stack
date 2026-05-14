@@ -1,0 +1,39 @@
+# Vendored dependencies
+plugins/*/vendor/
+plugins/*/node_modules/
+
+# git-fs object store
+.git-fs/
+
+# Opt-in marker — keep out of stack repo itself
+.stack
+.stack.toml
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build
+dist/
+build/
+*.exe
+
+# Logs
+*.log
