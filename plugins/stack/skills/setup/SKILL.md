@@ -1,5 +1,5 @@
 ---
-name: stack-setup
+name: setup
 description: Bootstrap checklist for the stack workflow. Trigger when user says "stack setup", "bootstrap stack", "set up stack", or starts a new machine/project that needs stack tools.
 ---
 

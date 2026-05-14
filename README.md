@@ -8,7 +8,7 @@ Bundles the MCP servers and skills that route work cheaply:
 
 | Plugin | Job |
 |---|---|
-| `stack` | Hub. Ships routing/setup/maintenance skills, `SessionStart` + `PreToolUse` hooks, `/stack-doctor`, `/stack-bootstrap`. |
+| `stack` | Hub. Ships routing/setup/maintenance skills, `SessionStart` + `PreToolUse` hooks, `/stack:doctor`, `/stack:bootstrap`. |
 | `git-fs` | Per-session virtual filesystem. Branch isolation, auto-merge on stop. |
 | `vicky` | Persistent research KB. Survives sessions, links findings. |
 | `context7` | Versioned library/SDK/framework docs over HTTP. |
@@ -31,10 +31,10 @@ Without the marker the hooks are silent. Zero cost.
 ```
 /plugin marketplace add yesitsfebreeze/stack
 /plugin install stack@stack
-/stack-bootstrap
+/stack:bootstrap
 ```
 
-`/stack-bootstrap` runs `scripts/install.sh` (POSIX) or `scripts/install.ps1` (Windows) via Bash. The script:
+`/stack:bootstrap` runs `scripts/install.sh` (POSIX) or `scripts/install.ps1` (Windows) via Bash. The script:
 
 - Adds the `stack` marketplace.
 - Installs all sub-plugins: `git-fs`, `vicky`, `context7`, `caveman`, `context-mode`.
@@ -58,7 +58,7 @@ scripts\install.bat
 Then verify:
 
 ```
-/stack-doctor
+/stack:doctor
 ```
 
 Reports MCP health, env vars, opt-in marker, installed plugins.

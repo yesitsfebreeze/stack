@@ -1,5 +1,5 @@
 ---
-name: stack-maintenance
+name: maintenance
 description: Monthly audit, prune, reindex commands for the stack. Trigger when user says "stack maintenance", "audit stack", "prune stack", "reindex".
 ---
 

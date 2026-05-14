@@ -26,7 +26,7 @@ Project opted in via \`.stack\` marker. Apply silently:
 
 Anti-patterns: Read whole file to analyze; WebFetch library docs; repeat web search across sessions.
 
-Full table: invoke skill \`stack-routing\`.`;
+Full table: invoke skill \`stack:routing\`.`;
 
 process.stdout.write(JSON.stringify({
   hookSpecificOutput: {

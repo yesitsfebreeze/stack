@@ -14,7 +14,7 @@ Run the platform-appropriate bootstrap script from this plugin via Bash. The scr
    - `touch .stack` in cwd (opt-in marker for routing hooks)
    - Warn if `CONTEXT7_API_KEY` is unset
 
-3. After it completes, invoke `/stack-doctor` to verify all MCPs connect.
+3. After it completes, invoke `/stack:doctor` to verify all MCPs connect.
 
 ## If the script fails
 

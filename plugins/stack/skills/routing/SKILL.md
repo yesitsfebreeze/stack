@@ -1,5 +1,5 @@
 ---
-name: stack-routing
+name: routing
 description: Stack decision table for routing work across kern, git-fs, vicky, Context7, skills. Trigger when user says "follow stack routing", "route this", "which tool", or starts work in a stack-enabled project.
 ---
 

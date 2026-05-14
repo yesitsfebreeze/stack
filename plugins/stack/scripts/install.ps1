@@ -37,4 +37,4 @@ if (-not $env:CONTEXT7_API_KEY) {
 }
 
 Write-Host ""
-Write-Host "==> Done. Run /stack-doctor to verify."
+Write-Host "==> Done. Run /stack:doctor to verify."

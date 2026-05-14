@@ -38,4 +38,4 @@ if [ -z "${CONTEXT7_API_KEY:-}" ]; then
 fi
 
 echo ""
-echo "==> Done. Run /stack-doctor to verify."
+echo "==> Done. Run /stack:doctor to verify."

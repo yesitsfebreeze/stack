@@ -1,7 +1,7 @@
 {
   "name": "stack",
   "version": "0.1.0",
-  "description": "Stack entry point. Routing decision table + setup checklist + maintenance audit as auto-loaded skills. Ships SessionStart + PreToolUse routing hooks and /stack-doctor.",
+  "description": "Stack entry point. Routing decision table + setup checklist + maintenance audit as auto-loaded skills. Ships SessionStart + PreToolUse routing hooks, /stack:doctor, /stack:bootstrap.",
   "author": {
     "name": "yesitsfebreeze"
   },
