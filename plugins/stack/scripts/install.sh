@@ -33,7 +33,7 @@ fi
 if [ -z "${CONTEXT7_API_KEY:-}" ]; then
   echo ""
   echo "WARN: CONTEXT7_API_KEY not set. context7 MCP will fail auth."
-  echo "      Get key from https://context7.com, then:"
+  echo "      Get key from https://context7.com/dashboard, then:"
   echo "        export CONTEXT7_API_KEY=ctx7sk-..."
 fi
 

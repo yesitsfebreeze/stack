@@ -32,8 +32,9 @@ if (-not (Test-Path .stack)) {
 if (-not $env:CONTEXT7_API_KEY) {
   Write-Host ""
   Write-Host "WARN: CONTEXT7_API_KEY not set. context7 MCP will fail auth."
-  Write-Host "      Get key from https://context7.com, then:"
-  Write-Host "        `$env:CONTEXT7_API_KEY = 'ctx7sk-...'"
+  Write-Host "      Get key from https://context7.com/dashboard, then:"
+  Write-Host "        setx CONTEXT7_API_KEY ctx7sk-...   # persist, new shell"
+  Write-Host "        # or session-only: `$env:CONTEXT7_API_KEY = 'ctx7sk-...'"
 }
 
 Write-Host ""
